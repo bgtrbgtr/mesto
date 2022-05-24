@@ -1,0 +1,6 @@
+.profile__info {
+  max-width: 550px;
+  display: grid;
+  grid-template-columns: fit-content(510px) 22px;
+  gap: 16px 18px;
+}
