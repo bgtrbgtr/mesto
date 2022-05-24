@@ -1,0 +1,18 @@
+.edit-form {
+  position: absolute;
+  top: 195px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 430px;
+  height: 330px;
+  background-color: #fff;
+  color: #000;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  padding: 34px 36px 37px;
+  box-sizing: border-box;
+  z-index: 2;
+  display: none;
+}

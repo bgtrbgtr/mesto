@@ -1,9 +1,7 @@
 .profile {
   display: grid;
-  grid-template-columns: 120px 550px 150px;
+  grid-template-columns: 120px minmax(min-content, 550px) 150px;
   gap: 30px;
-  justify-content: start;
   align-items: center;
-  max-width: 880px;
   margin: 0 auto 50px;
 }

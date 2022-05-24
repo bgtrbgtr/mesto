@@ -18,3 +18,10 @@
 @import url(../blocks/element/__like-button/element__like-button.css);
 @import url(../blocks/footer/footer.css);
 @import url(../blocks/footer/__copyright/footer__copyright.css);
+@import url(../blocks/edit-form/edit-form.css);
+@import url(../blocks/edit-form/__heading/edit-form__heading.css);
+@import url(../blocks/edit-form/__input/edit-form__input.css);
+@import url(../blocks/edit-form/__input/_type/edit-form__input_type_name.css);
+@import url(../blocks/edit-form/__input/_type/edit-form__input_type_job.css);
+@import url(../blocks/edit-form/__save-button/edit-form__save-button.css);
+@import url(../blocks/edit-form/__close-button/edit-form__close-button.css);
