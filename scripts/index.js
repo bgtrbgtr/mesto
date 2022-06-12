@@ -43,10 +43,16 @@ const initialCards = [
   },
 ]
 
+function likeAction(evt) {
+  evt.target.classList.toggle('element__like-button_active');
+}
+
 function addCard(card) {
   const cardElement = cardTemplate.querySelector('.element').cloneNode(true);
   cardElement.querySelector('.element__image').style = `background: url(${card.link}) center / cover`;
   cardElement.querySelector('.element__caption').textContent = card.name;
+  cardElement.querySelector('.element__like-button').addEventListener('click', likeAction);
+
   elementsSection.insertBefore(cardElement, elementsSection.firstChild);
 }
 
@@ -83,8 +89,8 @@ function popupAddCardOpen() {
   popupAddCard.classList.add('popup_opened');
 }
 
-function popupClose() {
-  popup.forEach((i) => { i.classList.remove('popup_opened') });
+function popupClose(evt) {
+  evt.target.closest('.popup').classList.remove('popup_opened');
 }
 
 editFormElement.addEventListener('submit', editFormSubmitHandler);
