@@ -45,7 +45,8 @@
       <form action="#" class="popup__form popup__form_type_edit-profile" name="profileInfoEdit" method="post">
         <input class="popup__field popup__field_type_name" type="text" name="profileInfoName" placeholder="Имя">
         <input class="popup__field popup__field_type_job" type="text" name="profileInfoJob" placeholder="О себе">
-        <button type="submit" class="popup__submit popup__submit_type_save" aria-label="Сохранить информацию">Сохранить</button>
+        <button type="submit" class="popup__submit popup__submit_type_save"
+          aria-label="Сохранить информацию">Сохранить</button>
       </form>
     </div>
   </div>
@@ -57,11 +58,18 @@
         <input class="popup__field popup__field_type_name" type="text" name="placeName" placeholder="Название">
         <input class="popup__field popup__field_type_job" type="text" name="placeImageUrl"
           placeholder="Ссылка на картинку">
-        <button type="submit" class="popup__submit popup__submit_type_add" aria-label="Создать новую карточку">Создать</button>
+        <button type="submit" class="popup__submit popup__submit_type_add"
+          aria-label="Создать новую карточку">Создать</button>
       </form>
     </div>
   </div>
-
+  <div class="popup popup_type_image">
+    <div class="popup__image-wrap">
+      <img src="" alt="" class="popup__image">
+      <button type="button" class="popup__close-button" aria-label="Закрыть изображение"></button>
+      <p class="popup__image-caption"></p>
+    </div>
+  </div>
   <script src="./scripts/index.js"></script>
 </body>
 

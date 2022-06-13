@@ -2,6 +2,7 @@ const editButton = document.querySelector('.profile__edit-button');
 const addButton = document.querySelector('.profile__add-button');
 const popupEditProfile = document.querySelector('.popup_type_edit-profile');
 const popupAddCard = document.querySelector('.popup_type_add-card');
+const popupImage = document.querySelector('.popup_type_image');
 const closePopupButton = document.querySelectorAll('.popup__close-button');
 const editFormElement = document.querySelector('.popup__form_type_edit-profile');
 const nameInput = editFormElement.querySelector('.popup__field_type_name');
@@ -49,8 +50,17 @@ function deleteCard(evt) {
   evt.target.closest('.element').remove();
 }
 
-function popupImageOpen() {
+function popupImageOpen(evt) {
+  popupImage.classList.add('popup_opened');
+  let imageLink = evt.target.style.background
+  imageLink = imageLink.slice(imageLink.indexOf('(') + 2, imageLink.indexOf(')') - 1);
+  const imageCaption = evt.target.closest('.element').querySelector('.element__caption').textContent;
 
+  const image = popupImage.querySelector('.popup__image');
+  image.setAttribute('src', `${imageLink}`);
+  image.setAttribute('alt', imageCaption);
+
+  popupImage.querySelector('.popup__image-caption').textContent = imageCaption;
 }
 
 function addCard(card) {
