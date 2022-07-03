@@ -25,3 +25,11 @@
     font-size: 14px;
   }
 }
+
+.popup__submit:disabled {
+  background: #fff;
+  border: solid 1px #000;
+  color: #000;
+  opacity: 0.2;
+  cursor:not-allowed;
+}
