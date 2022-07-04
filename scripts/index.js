@@ -15,6 +15,8 @@ const placeImageUrl = addCardFormElement.querySelector('.popup__field_type_job')
 const cardTemplate = document.querySelector('#card').content;
 const elementsSection = document.querySelector('.elements');
 const popups = document.querySelectorAll('.popup');
+const image = popupImage.querySelector('.popup__image');
+const caption = popupImage.querySelector('.popup__image-caption');
 
 const formConfig = {
   formSelector: '.popup__form',
@@ -44,10 +46,9 @@ const closePopup = (popup) => {
 
 const openPopupImage = (card) => {
   openPopup(popupImage);
-  const image = popupImage.querySelector('.popup__image');
-  const caption = popupImage.querySelector('.popup__image-caption');
   caption.textContent = card.name;
   image.src = card.link;
+  image.alt = `Фотография места: ${card.name}`;
 }
 
 const addCard = (card) => {
@@ -56,12 +57,14 @@ const addCard = (card) => {
 
 const createCard = (card) => {
   const cardElement = cardTemplate.querySelector('.element').cloneNode(true);
-  cardElement.querySelector('.element__image').style = `background: url(${card.link}) center / cover`;
-  cardElement.querySelector('.element__caption').textContent = card.name;
+  const cardElementImg = cardElement.querySelector('.element__image');
   const likeButton = cardElement.querySelector('.element__like-button');
-  likeButton.addEventListener('click', likeAction(likeButton));
+  cardElementImg.src = `${card.link}`;
+  cardElementImg.alt = `Фотография места: ${card.name}`;
+  cardElementImg.addEventListener('click', () => openPopupImage(card));
+  cardElement.querySelector('.element__caption').textContent = card.name;
   cardElement.querySelector('.element__delete-button').addEventListener('click', deleteCard);
-  cardElement.querySelector('.element__image').addEventListener('click', () => openPopupImage(card));
+  likeButton.addEventListener('click', likeAction(likeButton));
   return cardElement;
 }
 
@@ -100,8 +103,8 @@ const openPopupAddCard = () => {
 }
 
 const closePopupByEsc = (evt) => {
-  const popupOpened = document.querySelector('.popup_opened');
   if (evt.key === 'Escape') {
+    const popupOpened = document.querySelector('.popup_opened');
     closePopup(popupOpened);
   }
 }
